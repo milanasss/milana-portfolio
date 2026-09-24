@@ -34,7 +34,7 @@ export function mountDesk(host){
  const resume=item('experience',1.75,1.91,-1.3);resume.rotation.y=-.15;box(resume,1.55,.08,1.20,0,0,0,0xeab1cb,true);box(resume,1.40,.018,1.04,.02,.05,.02,cream);for(let i=0;i<4;i++)box(resume,i===0?.5:1,.007,.026,-.13,.065,-.30+i*.18,0xb3bda2);
  // Sewing spool and ribbon accompany the club supplies.
  const spool=item('club',-1.5,1.98,1.5);cylinder(spool,.21,.21,.32,0,0,0,pink);cylinder(spool,.25,.25,.045,0,.18,0,cream);cylinder(spool,.25,.25,.045,0,-.18,0,cream);
- const actions={laptop:()=>openLaptop(),art:()=>navigate('#/art',sketch),crafts:()=>navigate('#/project/crafts-club',cup),club:()=>navigate('#/project/crafts-club',spool),fairy:()=>navigate('#/project/fairy-runner',game),experience:()=>navigate('#/experience',resume)};
+ const actions={laptop:()=>openLaptop(),art:()=>navigate('#/work',sketch),crafts:()=>navigate('#/project/crafts-club',cup),club:()=>navigate('#/project/crafts-club',spool),fairy:()=>navigate('#/project/fairy-runner',game),experience:()=>navigate('#/experience',resume)};
  const positions={laptop:new THREE.Vector3(.15,4.3,-.55),art:new THREE.Vector3(-2.7,2.35,.85),crafts:new THREE.Vector3(-3.1,3.1,-1.65),fairy:new THREE.Vector3(2.15,2.15,1.1),experience:new THREE.Vector3(1.75,2.1,-1.6)};
  const labels=[...host.querySelectorAll('[data-object]')];labels.forEach(b=>b.onclick=()=>actions[b.dataset.object]());
  const dialog=host.querySelector('.laptop-dialog');const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let zoom=0,goalZoom=0,hover=null,pointerX=0,angle=0,startX=null,moved=false,raf,timer;
